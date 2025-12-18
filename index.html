@@ -39,7 +39,6 @@
         /* ===== CONTAINER (GRID) ===== */
         .container {
             display: grid;
-            /* Crée des colonnes automatiques de minimum 280px */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             max-width: 1200px;
@@ -62,10 +61,11 @@
 
         .playlist-card iframe {
             width: 100%;
-            height: 380px;
+            height: 352px; /* Hauteur optimale Spotify pour éviter le vide noir */
             border-radius: 14px;
             border: none;
             box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            display: block;
         }
 
         /* ===== BOUTON DISCORD FIXE ===== */
@@ -92,12 +92,15 @@
             transform: scale(1.15) rotate(5deg);
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* ===== RESPONSIVE MOBILE ===== */
         @media (max-width: 600px) {
-            .playlist-card iframe { height: 320px; }
+            body { padding: 20px 10px; }
+            .container { gap: 20px; }
+            .playlist-card { padding: 10px; }
+            .playlist-card iframe { height: 352px; }
             .discord-button {
-                width: 55px;
-                height: 55px;
+                width: 60px;
+                height: 60px;
                 bottom: 15px;
                 right: 15px;
             }
@@ -111,18 +114,41 @@
 
     <div class="container">
         <div class="playlist-card">
-            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6V69Yfs6Y5I" 
+            <iframe src="https://open.spotify.com/embed/playlist/0" 
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                     loading="lazy"></iframe>
         </div>
 
         <div class="playlist-card">
-            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX2vYvS7dI99v" 
+            <iframe src="https://open.spotify.com/embed/playlist/1" 
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                     loading="lazy"></iframe>
         </div>
-        
+
+        <div class="playlist-card">
+            <iframe src="https://open.spotify.com/embed/playlist/2" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
         </div>
+
+        <div class="playlist-card">
+            <iframe src="https://open.spotify.com/embed/playlist/3" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+        </div>
+
+        <div class="playlist-card">
+            <iframe src="https://open.spotify.com/embed/playlist/4" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+        </div>
+
+        <div class="playlist-card">
+            <iframe src="https://open.spotify.com/embed/playlist/5" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"></iframe>
+        </div>
+    </div>
 
     <a href="https://discord.gg/aytrfETuVK" target="_blank" class="discord-button" title="Rejoignez-nous sur Discord">
         <img src="assets/japan and friends.png" alt="Discord Logo">
